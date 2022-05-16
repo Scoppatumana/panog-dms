@@ -111,3 +111,28 @@
     }
 
 ?>
+
+
+<?php 
+    if ($action=='verifypayment'){
+
+    
+
+        // INSERT INTO PAYMENT VERIFICATION TAB //
+
+        mysqli_query($conn, "INSERT INTO `payment_verification_tab`
+        (`member_id`, `payment_purpose`, `payment_details`, `date`)
+         VALUES ('$s_member_id','$paymentheading','$paymentdetails', NOW())")
+        or die('cannot insert into annual-due-tab');
+
+    
+?>
+
+            <script>
+                window.parent(location="../registration-successful.php");
+            </script>
+<?php
+
+    }
+
+?>

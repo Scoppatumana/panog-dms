@@ -43,6 +43,7 @@
                             $selectmember_fetch = mysqli_fetch_array($selectmember_query);
 
                             $select_firstname= $selectmember_fetch['firstname'];
+                            $select_email= $selectmember_fetch['email_address'];
                             $select_title= $selectmember_fetch['title'];
                             $select_lastname= $selectmember_fetch['lastname'];
                             $select_memberid= $selectmember_fetch['member_id'];
@@ -83,9 +84,13 @@
 
                          </div>
 
-                         
+                         <a href="payment-index.php">
+                         <button>PROCEED TO PAYMENT</button>
+                         </a>
 
 
+
+                        
                     </div>
    
               
@@ -109,16 +114,19 @@
                 <input type="text" placeholder="Due Heading" name="dueheading" id="dueheading" required> 
                 
                 <label for="" >Comment<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
-                <textarea cols="46" rows="10" name="summary" id="summary"required></textarea>
+                <textarea cols="46" rows="10" name="summary" id="summary" required></textarea>
 
                 <div class="buttons-div">
-                <button class="establish"> <i class="fa fa-plus-square"></i> ESTABLISH</button>
-                <button class="close" onClick="_hide_establish_dues();"> <i class="fa fa-window-close-o"></i> CLOSE</button>
+                <button type="submit" class="establish"> <i class="fa fa-plus-square"></i> ESTABLISH</button>
+                <button type="button" class="close" onClick="_hide_establish_dues();"> <i class="fa fa-window-close-o"></i> CLOSE</button>
                 </div>
             </div>
         </div>
 
                 </form>
+
+
+              
         
 
     </body>

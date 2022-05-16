@@ -55,7 +55,7 @@
         </div>
 
         <div class="main-displayed-div">
-          <a href="staff-list.php"
+          <a href=""
             ><div class="main-div-proper staffs">
               <div class="inner-div">
                 <i class="fa fa-user"></i>
@@ -64,14 +64,23 @@
               </div>
             </div></a
           >
-          <div class="main-div-proper students" onclick="_show_student()">
+          <a href=""><div class="main-div-proper students">
             <div class="inner-div">
               <i class="fa fa-users"></i>
               <span class="counter" data-target="5000"> 0 </span><br />
               Members
             </div>
-          </div>
-          <a href="faculty-table.php"
+          </div></a>
+          <a href=""
+            ><div class="main-div-proper faculties">
+              <div class="inner-div">
+                <i class="fa fa-building"></i>
+                <span class="counter" data-target="5000"> 0 </span><br />
+                Dues
+              </div>
+            </div></a
+          >
+          <a href=""
             ><div class="main-div-proper faculties">
               <div class="inner-div">
                 <i class="fa fa-building"></i>

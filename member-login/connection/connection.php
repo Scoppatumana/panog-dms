@@ -32,6 +32,6 @@ header("Acces-Contorl-Allow-Origin");/// to call API and clear the error from we
     $farm_lga=trim($_POST['farm_lga']);
     $types_of_birds=trim($_POST['types_of_birds']);
     $farm_capacity=trim($_POST['farm_capacity']);
-    $dueheading=trim($_POST['dueheading']);
-    $summary=trim($_POST['summary']);
+    $paymentheading=trim($_POST['paymentheading']);
+    $paymentdetails=trim($_POST['paymentdetails']);
 ?>

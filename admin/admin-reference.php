@@ -68,18 +68,18 @@
 
 
         <a href="faculty-table.php"><li><i class="fa fa-building"></i> Feed Sub Dues</li></a>
-        <a href="lectures.php"><li><i class="fa fa-book"></i> Ceremonial Dues
+        <li><i class="fa fa-book"></i> Ceremonial Dues
             <div class="side-menu-1">
 
                 <ul>
-                    <li><i class="fa fa-sign-out"></i> World Egg Day</li> 
+                    <a href="payment-index.php"><li><i class="fa fa-sign-out"></i> World Egg Day</li> </a>
                     <li><i class="fa fa-sign-out"></i> New Year Party</li> 
 
                 </ul>
 
             </div>
     
-    </li></a>
+    </li>
         <li><i class="fa fa-sign-out"></i> Sign-out</li>
     </ul>
 </div>

@@ -37,41 +37,7 @@
 
            
             <div class="notification-main">
-            <?php
-
-
-                    $selectmember_query = mysqli_query($conn, "SELECT * FROM `payment_verification_tab`") or die('cannot select from database');
-                    while ($selectmember_fetch = mysqli_fetch_array($selectmember_query)) {
-
-                        $select_memberid= $selectmember_fetch['member_id'];
-                        $select_payment_purpose= $selectmember_fetch['payment_purpose'];
-                        $select_payment_details= $selectmember_fetch['payment_details'];
-
-
-
-                        $findmember_query = mysqli_query($conn, "SELECT * FROM `members_tab` WHERE member_id = '$select_memberid' ") or die('cannot select from database');
-                        $findmember_fetch = mysqli_fetch_array($findmember_query);
-        
-                        $find_firstname= $findmember_fetch['firstname'];
-                        $find_title= $findmember_fetch['title'];
-                        $find_lastname= $findmember_fetch['lastname'];
-                        $find_middlename= $findmember_fetch['middlename'];
-
-    
-                    ?>
-                <div class="notification-proper">
-                    <div class="passport">
-                        <img alt="Passport" src="images/863.jpg">
-                    </div>
-                    <div class="notification-text">
-                            <h4><?php echo $find_title ?> <?php echo $find_lastname ?> <?php echo $find_firstname ?> <?php echo $find_middlename ?> </h4>
-                            <p><?php echo $select_payment_purpose ?></p>
-                            <p><?php echo $select_payment_details ?></p>
-                    </div>
-                </div>
-
-                <?php } ?>
-
+           
 
 
 

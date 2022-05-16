@@ -1,6 +1,17 @@
 <?php include 'connection/connection.php' ?>
 <?php include 'connection/session.php' ?>
 
+
+<?php
+
+
+    $email= $_GET['email'];
+    $amount= $_GET['amount'];
+    $first_name= $_GET['firstname'];
+    $last_name= $_GET['lastname'];
+
+
+?>
 <html>
     <head>
         <title>Administrative Portal | PANOG-DMS</title>
@@ -27,7 +38,10 @@
                                 </span>
                             </div>
 
-                           
+                            <div class="current-time button-div">
+                               <button onClick="_show_establish_dues();"> <i class="fa fa-pencil-square-o"></i> ESTABLISH PAYMENT</button>
+                            </div>
+
                             
                         </div>
                     </div>
@@ -40,7 +54,6 @@
                             $selectmember_fetch = mysqli_fetch_array($selectmember_query);
 
                             $select_firstname= $selectmember_fetch['firstname'];
-                            $select_email= $selectmember_fetch['email_address'];
                             $select_title= $selectmember_fetch['title'];
                             $select_lastname= $selectmember_fetch['lastname'];
                             $select_memberid= $selectmember_fetch['member_id'];
@@ -68,28 +81,64 @@
 
 
 
-    
-                    <div class="annual-dues-main-div animated animated zoomIn animated">
+<div class="annual-dues-main-div paymentform-main animated animated zoomIn animated">
+  <form id="paymentForm">
+    <div class="form-group">
+      
+      <input type="email" id="email-address" placeholder="Email-Address" value="<?php echo $email ?>" required />
+    </div>
+    <div class="form-group">
+      
+      <input type="tel" id="amount"  placeholder="Amount" value="<?php echo $amount ?>" required />
+    </div>
+    <div class="form-group">
+      
+      <input type="text" id="first-name" placeholder="First Name" value="<?php echo $first_name ?>" />
+    </div>
+    <div class="form-group">
+      
+      <input type="text" id="last-name" placeholder="Last Name" value="<?php echo $last_name ?>" />
+    </div>
+    <div class="form-submit">
+      
+      <button type="submit" onclick="payWithPaystack()"> PAY </button>
+    </div>
+  </form>
+  <script src="https://js.paystack.co/v1/inline.js"></script>      
+</div>
 
-                         <h1>ANNUAL DUES</h1>
-
-                         <input type="text" placeholder="Member Name" value="<?php echo $select_title ?> <?php echo $select_lastname ?> <?php echo $select_firstname ?>" class="member-name">
-
-                         <div class="information-div">
-                            <h6> Dear <?php echo $select_title ?> <?php echo $select_lastname ?> <?php echo $select_firstname ?> <?php echo $select_middlename ?> , </h6>
-                            <p> You are eligible to pay a total sum of <?php echo $annual_due ?> annual due as a result of the fact that the bird capacity of your farm is <?php echo $select_farm_capacity ?> . </p>
-
-                         </div>
-
-                         <a href="payment-index.php">
-                         <button>PROCEED TO PAYMENT</button>
-                         </a>
 
 
 
-                         <p class="paid" onClick="_show_establish_dues();">I have paid my dues</p>
 
-                    </div>
+
+<script>
+    const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false);
+function payWithPaystack(e) {
+  e.preventDefault();
+  let handler = PaystackPop.setup({
+    key: 'pk_test_1611d77c8b92ac942fe5c30daf23706f8454b6d2', // Replace with your public key
+    email: document.getElementById("email-address").value,
+    amount: document.getElementById("amount").value,
+    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+    // label: "Optional string that replaces customer email"
+    onClose: function(){
+        window.location = "https://localhost/panog-dms/admin/payment-index.php?transaction=call";
+      alert('Transaction Cancelled.');
+    },
+    callback: function(response){
+      let message = 'Payment complete! Reference: ' + response.reference;
+      alert(message);
+      window.location = "https://localhost/panog-dms/admin/verify-transaction.php?reference=" + response.reference;
+    }
+  });
+  handler.openIframe();
+}
+
+
+</script>
+</body>
    
               
     
@@ -101,32 +150,27 @@
 
 
 
-               
-
-
-                <form action="connection/code.php?action=verifypayment" method="POST" enctype="multipart/form-data">  
+      <form action="connection/code.php?action=establishdues" method="POST" enctype="multipart/form-data">  
         <div class="establish-dues">
-        <div class="establish-dues-main">
+            <div class="establish-dues-main">
                 <div class="establish-dues-header">
-                    <h1><i class="fa fa-plus-square"></i> Payment Confirmation</h1>
+                    <h1><i class="fa fa-plus-square"></i> Dues Establishment</h1>
                 </div>
 
-                <label for="" >PAYMENT OF<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
-                <input type="text" placeholder="e.g Payment of Annual Due for the year 2022" name="paymentheading" id="paymentheading" required> 
+                <label for="" >Due Heading<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
+                <input type="text" placeholder="Due Heading" name="dueheading" id="dueheading" required> 
                 
-                <label for="" >REPORT<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
-                <textarea cols="46" rows="10" name="paymentdetails" id="paymentdetails" placeholder="e.g Dear Sir, I paid the amount of NGN20000 through bank transfer to the following account:090000999983 Zenith Bank. KIndly confirm the payment." required></textarea>
-
-               
+                <label for="" >Comment<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
+                <textarea cols="46" rows="10" name="summary" id="summary" required></textarea>
 
                 <div class="buttons-div">
-                <button type="submit" class="establish"> <i class="fa fa-eye"></i> CONFIRM</button>
+                <button type="submit" class="establish"> <i class="fa fa-plus-square"></i> ESTABLISH</button>
                 <button type="button" class="close" onClick="_hide_establish_dues();"> <i class="fa fa-window-close-o"></i> CLOSE</button>
                 </div>
             </div>
         </div>
 
-                </form>
+      </form>
         
 
     </body>

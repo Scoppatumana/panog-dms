@@ -247,3 +247,52 @@ header .header-div-inner h1 span {
 
 
 
+
+
+
+@media all and (max-width:1000px){
+  .body-main-div .background-image .welcome-text .welcome{
+    font-size: 25px;
+
+  }
+}
+
+@media all and (max-width:845px){
+  .body-main-div .background-image .welcome-text .welcome{
+    font-size: 17px;
+
+  }
+}
+
+@media all and (max-width:735px){
+  .body-main-div .background-image .welcome-text{
+    display: none;
+  }
+}
+
+
+@media all and (max-width:735px){
+  .body-main-div .background-image .login-overall-div{
+    width: 100%;
+  }
+}
+
+@media all and (max-width:735px){
+  .body-main-div .background-image .login-overall-div .login-main-div{
+    margin: auto;
+    width: 80%;
+  }
+}
+
+
+@media all and (max-width:400px){
+  .body-main-div .copyright p{
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width:735px){
+  .body-main-div .background-image .login-overall-div .login-main-div{
+    width: 90%;
+  }
+}

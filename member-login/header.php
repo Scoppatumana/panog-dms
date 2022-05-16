@@ -8,31 +8,33 @@
       <img src="images/logo.png" alt="OOU IMAGE" />
     </div>
 
-          <?php
+    <?php
 
             $checkannualduequery = mysqli_query($conn, "SELECT * FROM `annual_due_tab`");
             $checkannualdue = mysqli_num_rows($checkannualduequery);
 
-            if ($checkannualdue > 99) {
-              $checkannualdue = "99+";
+            
+
+            if ($checkannualdue > 50) {
+              $checkannualdue = "50+";
             }
 
 
-          ?>
+    ?>
 
 
 
     <ul class="nav-bar">
      <a href="view-members.php?member_id=<?php echo $s_member_id ?>"> <li> <i class="fa fa-user-circle"></i> My Profile</li></a>
     </ul>
-    <span class="notification"> <i class="fa fa-bell"></i>
+   <a href="notification.php"> <span class="notification"> <i class="fa fa-bell"></i>
       
       <div class="numbers">
         <?php echo $checkannualdue ?>
       </div>
 
             
-    </span>
+    </span></a>
 
     
 

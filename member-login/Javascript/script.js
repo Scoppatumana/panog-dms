@@ -176,6 +176,16 @@ counters.forEach(counter => {
         $('.establish-dues-main').animate({'margin-right':'-250px'},600);
     }
 
+    function _show_dues_confirmation() {
+        $('.dues_confirmation').animate({'right':'0%'},100);
+        $('.dues_confirmation-main').animate({'margin-right':'0px'},500);
+    }
+
+    function _hide_dues_confirmation() {
+        $('.dues_confirmation').animate({'right':'-1000%'},1000);
+        $('.dues_confirmation-main').animate({'margin-right':'-250px'},600);
+    }
+
     (function alternate_text () {
         var words = [
             "Ounje'l'Eyin",

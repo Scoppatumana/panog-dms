@@ -96,8 +96,8 @@
         // INSERT INTO ANNUAL DUE TAB //
 
         mysqli_query($conn, "INSERT INTO `annual_due_tab`
-        (`annual_due_id`, `annual_due_heading`, `annual_due_comment`, `date_established`)
-         VALUES ('$annualdue_id','$dueheading','$summary', NOW())")
+        (`member_id`, `annual_due_id`, `annual_due_heading`, `annual_due_comment`, `date_established`)
+         VALUES ('$s_member_id','$annualdue_id','$dueheading','$summary', NOW())")
         or die('cannot insert into annual-due-tab');
 
     
