@@ -496,7 +496,11 @@ header .header-div-inner h1 span {
   overflow: hidden;
 }
 
-.dashboard-main-div .right-sided-div .bookings {
+.dashboard-main-div .right-sided-div .bookings-overall{
+  width: 100%;
+}
+
+.dashboard-main-div .right-sided-div  .bookings-overall .bookings {
   min-height: 120px;
   width: 30%;
   background: #fff;
@@ -508,27 +512,27 @@ header .header-div-inner h1 span {
   cursor: pointer;
 }
 
-.dashboard-main-div .right-sided-div .bookings:hover {
+.dashboard-main-div .right-sided-div .bookings-overall .bookings:hover {
   background: rgba(225, 225, 225, 0.8);
 }
 
-.dashboard-main-div .right-sided-div .bookings .booking-inner {
+.dashboard-main-div .right-sided-div .bookings-overall .bookings .booking-inner {
   height: 60px;
   cursor: pointer;
   padding: 30px 7% 30px 7%;
 }
 
-.dashboard-main-div .right-sided-div .bookings .booking-inner .booking-span {
+.dashboard-main-div .right-sided-div .bookings-overall .bookings .booking-inner .booking-span {
   line-height: 60px;
   font-size: 17px;
   color:  #23f523;
 }
 
-.dashboard-main-div .right-sided-div .bookings .booking-inner .booking-span i {
+.dashboard-main-div .right-sided-div .bookings-overall .bookings .booking-inner .booking-span i {
   margin-right: 10px;
 }
 
-.dashboard-main-div .right-sided-div .bookings .booking-inner button {
+.dashboard-main-div .right-sided-div .bookings-overall .bookings .booking-inner button {
   width: 50px;
   height: 40px;
   color: #fff;
@@ -1152,6 +1156,12 @@ background: rgba(43, 211, 1, 0.829);
   }
 }
 
+@media all and (max-width:365px){
+  .dashboard-main-div .right-sided-div .bg-image-div .bg-cover .user-details .welcome-text h1{
+    font-size: 15px;
+  }
+}
+
 
 @media all and (max-width:1235px){
   .dashboard-main-div .left-sided-div .profile-div button{
@@ -1195,6 +1205,11 @@ background: rgba(43, 211, 1, 0.829);
   }
 }
 
+@media all and (max-width:490px){
+  .dashboard-main-div .right-sided-div .main-displayed-div .main-div-proper{
+    width: 90%;
+  }
+}
 
 @media all and (max-width:750px){
   .dashboard-main-div
@@ -1222,9 +1237,84 @@ background: rgba(43, 211, 1, 0.829);
 @media all and (max-width:750px){
   .dashboard-main-div .right-sided-div .bg-image-div .bg-cover .user-details{
     width: 100%;
-    margin: 10px auto 0px auto;
+    margin-top: 20px;
+  }
+}
+
+@media all and (max-width:750px){
+  .dashboard-main-div
+  .right-sided-div
+  .bg-image-div
+  .bg-cover
+  .user-details
+  .picture-div{
+    margin: 0px 0px 0px 120px;
+  }
+}
+
+@media all and (max-width:590px){
+  .dashboard-main-div
+  .right-sided-div
+  .bg-image-div
+  .bg-cover
+  .user-details
+  .picture-div{
+    height: 100px;
+  width: 100px;
+  margin-top: 15px;
+  }
+}
+
+@media all and (max-width:490px){
+  .dashboard-main-div
+  .right-sided-div
+  .bg-image-div
+  .bg-cover
+  .user-details
+  .picture-div{
+    margin: 0px 0px 0px 30px;
+  }
+}
+
+@media all and (max-width:590px){
+  .dashboard-main-div
+  .right-sided-div
+  .bg-image-div
+  .bg-cover
+  .user-details
+  .picture-div{
+  margin-top: 15px;
   }
 }
 
 
+@media all and (max-width:470px){
+  .dashboard-main-div
+  .right-sided-div
+  .bg-image-div
+  .bg-cover
+  .user-details
+  .welcome-text
+  .login-date {
+  font-size: 11px;
+  }
+}
 
+@media all and (max-width:395px){
+  .dashboard-main-div
+  .right-sided-div
+  .bg-image-div
+  .bg-cover
+  .user-details
+  .welcome-text
+  .login-date {
+  font-size: 8px;
+  font-weight: bold;
+  }
+}
+
+@media all and (max-width:900px){
+  .dashboard-main-div .right-sided-div .bookings-overall{
+    text-align: center;
+  }
+}
