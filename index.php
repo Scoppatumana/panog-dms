@@ -67,7 +67,7 @@
       <div class="copyright">
         <p><i class="fa fa-copyright"></i>CopyRight: All Rights Reserved</p>
         <p class="date">
-          <span>Date:</span> Wednesday, 04 March 2021
+          <span>Date:</span> Friday, 04 March 2021
           <span>Time:</span> 07:46<sup>PM</sup><br/>
         </p>
       </div>
