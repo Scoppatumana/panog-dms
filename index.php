@@ -24,9 +24,7 @@
                 <input type="email" placeholder="E-mail Address" name="loginemail" id="loginemail" required />
                 <input type="password" placeholder="Password" name="loginpassword" id="loginpassword" required />
 
-                <a href="admin/index.php"
-                  ><button type="submit"><i class="fa fa-sign-in"></i> Log-in</button></a
-                >
+                <button type="submit"><i class="fa fa-sign-in"></i> Log-in</button>
                 <br />
 
                 <span> forgot password?  <span class="reset" onClick="_next_page('next_2');">Reset here</span> </span>

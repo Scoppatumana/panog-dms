@@ -52,16 +52,16 @@
                             
 
                             if($select_farm_capacity == "0 - 1000 birds"){
-                                $annual_due = "NGN2500";
+                                $annual_due = "2500";
                             }else{
                                 if($select_farm_capacity == "1000 - 5000 birds"){
-                                    $annual_due = "NGN10000";
+                                    $annual_due = "10000";
                                 }else{
                                     if($select_farm_capacity == "5000 - 10000 birds"){
-                                        $annual_due = "NGN20000";
+                                        $annual_due = "20000";
                                 }else{
                                     if($select_farm_capacity == "Above 50,000 birds"){
-                                        $annual_due = "NGN50000";
+                                        $annual_due = "50000";
                                 }
                             }
                         }
@@ -84,9 +84,10 @@
 
                          </div>
 
-                         <a href="payment-index.php">
-                         <button>PROCEED TO PAYMENT</button>
+                         <a href="payment-index.php?email=<?php echo $select_email ?>&amount=<?php echo $annual_due ?>&firstname=<?php echo $select_firstname ?>&lastname=<?php echo $select_lastname ?>">
+                         <button>PROCEED TO PAYMENT</button><br />
                          </a>
+                     
 
 
 

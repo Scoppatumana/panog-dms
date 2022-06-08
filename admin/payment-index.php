@@ -11,6 +11,8 @@
     $last_name= $_GET['lastname'];
 
 
+
+
 ?>
 <html>
     <head>
@@ -82,14 +84,14 @@
 
 
 <div class="annual-dues-main-div paymentform-main animated animated zoomIn animated">
-  <form id="paymentForm">
+  <form action="pay.php" method="POST">
     <div class="form-group">
       
-      <input type="email" id="email-address" placeholder="Email-Address" value="<?php echo $email ?>" required />
+      <input type="email" name="email" id="email-address" placeholder="Email-Address" value="<?php echo $email ?>" required />
     </div>
     <div class="form-group">
       
-      <input type="tel" id="amount"  placeholder="Amount" value="<?php echo $amount ?>" required />
+      <input type="number" id="amount" name="amount"  placeholder="Amount" value="<?php echo $amount ?>" required />
     </div>
     <div class="form-group">
       
@@ -101,43 +103,16 @@
     </div>
     <div class="form-submit">
       
-      <button type="submit" onclick="payWithPaystack()"> PAY </button>
+      <button type="submit" name="pay"> PAY </button>
     </div>
   </form>
-  <script src="https://js.paystack.co/v1/inline.js"></script>      
+       
 </div>
 
 
 
 
 
-
-<script>
-    const paymentForm = document.getElementById('paymentForm');
-paymentForm.addEventListener("submit", payWithPaystack, false);
-function payWithPaystack(e) {
-  e.preventDefault();
-  let handler = PaystackPop.setup({
-    key: 'pk_test_1611d77c8b92ac942fe5c30daf23706f8454b6d2', // Replace with your public key
-    email: document.getElementById("email-address").value,
-    amount: document.getElementById("amount").value,
-    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-    // label: "Optional string that replaces customer email"
-    onClose: function(){
-        window.location = "https://localhost/panog-dms/admin/payment-index.php?transaction=call";
-      alert('Transaction Cancelled.');
-    },
-    callback: function(response){
-      let message = 'Payment complete! Reference: ' + response.reference;
-      alert(message);
-      window.location = "https://localhost/panog-dms/admin/verify-transaction.php?reference=" + response.reference;
-    }
-  });
-  handler.openIframe();
-}
-
-
-</script>
 </body>
    
               

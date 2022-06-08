@@ -1,7 +1,12 @@
+<?php include 'connection/session.php' ?>
 
+<?php if ($_SESSION['status'] != true){
+  header("location: ../index.php");
+}  ?>
 <html>
   <head>
   <?php include 'reference.php' ?>
+  
     <title>Administrative Portal | Panog-Remo DMS</title>
   </head>
   <body>

@@ -106,6 +106,8 @@
             
             $_SESSION['member_id']=$loginmemberid;
             $loginmemberid=$_SESSION['member_id'];
+            $_SESSION['status']=true;
+
 ?>
 
             <script>
@@ -124,6 +126,7 @@
             
             $_SESSION['member_id']=$loginmemberid;
             $loginmemberid=$_SESSION['member_id'];
+            $_SESSION['status']=true;
 ?>
 
             <script>

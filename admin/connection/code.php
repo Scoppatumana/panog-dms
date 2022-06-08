@@ -65,11 +65,13 @@
        `lastname`='$lastname',`owners_lga`='$owners_lga',`gender`='$gender',`email_address`='$email_address',`home_address`='$home_address',`role`='$role',
        `farm_name`='$farm_name',`farm_address`='$farm_address',`farm_lga`='$farm_lga',`types_of_birds`='$types_of_birds',
        `farm_capacity`='$farm_capacity' WHERE `member_id`='$member_id'") or die('cannot update members-tab');
-    }
+    
 ?>
         <script>
             window.parent(location="../update-successful.php");
         </script>
+<?php
+}
 ?>
 
 
@@ -112,12 +114,14 @@
 
 ?>
 
-
+<!-- LOGOUT FUNCION -->
 <?php
-    if ($action == 'myprofile'){
-        
+    if ($action== 'signout'){
+        session_destroy();
+?>
+            <script>
+                window.parent(location="../../index.php")
+            </script>
+<?php
     }
-
-
-
 ?>

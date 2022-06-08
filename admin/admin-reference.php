@@ -1,6 +1,6 @@
 <?php include 'connection/connection.php' ?>
 <?php include 'connection/session.php' ?>
-
+<? ?>
 
 <div class="left-sided-div animated animated fadeInLeft animated">
 
@@ -80,7 +80,7 @@
             </div>
     
     </li>
-        <li><i class="fa fa-sign-out"></i> Sign-out</li>
+      <a href="connection/code.php?action=signout"> <li><i class="fa fa-sign-out"></i> Sign-out</li> </a>
     </ul>
 </div>
 

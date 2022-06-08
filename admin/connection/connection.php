@@ -15,9 +15,7 @@ header("Acces-Contorl-Allow-Origin");/// to call API and clear the error from we
 
 
 <?php 
-
     // variable declaration  //
-
     $firstname=trim($_POST['firstname']);  
     $middlename=trim($_POST['middlename']);
     $lastname=trim($_POST['lastname']); 

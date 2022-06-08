@@ -6,11 +6,13 @@
 <!-------------------------------------------------------------->
 <link rel="shortcut icon" type="image-png" href="images/icon.png"/>
 <link href="css/animate.css" type="text/css" rel="stylesheet"/>
+<link href="css/aos.css" type="text/css" rel="stylesheet"/>
 <link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-<script src="Javascript/jquery-library.js"></script>
+<script src="javascript/jquery-library.js"></script>
+
 
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
-<script src="Javascript/script.js"></script>
+<script src="javascript/script.js"></script>
 <!--------------------------------for slide------------------------------>
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
 
