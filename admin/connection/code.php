@@ -125,3 +125,11 @@
 <?php
     }
 ?>
+
+<!-- update-payment -->
+<?php
+    if ($action== 'updateconfirmation'){
+        mysqli_query($conn, "UPDATE `payment_verification_tab` SET payment_status='confirmed' WHERE counter_id='$counterid'");
+
+    }
+?>

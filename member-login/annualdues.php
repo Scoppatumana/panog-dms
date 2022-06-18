@@ -111,13 +111,9 @@
                     <h1><i class="fa fa-plus-square"></i> Payment Confirmation</h1>
                 </div>
 
-                <label for="" >PAYMENT OF<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
-                <input type="text" placeholder="e.g Payment of Annual Due for the year 2022" name="paymentheading" id="paymentheading" required> 
+                <label for="" >AMOUNT PAID<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
+                <input type="number" placeholder="" name="amountpaid" id="amountpaid" required> 
                 
-                <label for="" >REPORT<sup style="color: red; font-size: 18px; font-weight: bold; ">*</sup> </label><br/>
-                <textarea cols="46" rows="10" name="paymentdetails" id="paymentdetails" placeholder="e.g Dear Sir, I paid the amount of NGN20000 through bank transfer to the following account:090000999983 Zenith Bank. KIndly confirm the payment." required></textarea>
-
-               
 
                 <div class="buttons-div">
                 <button type="submit" class="establish"> <i class="fa fa-eye"></i> CONFIRM</button>
@@ -128,6 +124,16 @@
 
                 </form>
         
+<script>
+     function _show_establish_dues() {
+        $('.establish-dues').animate({'top':'0%'},100);
+        $('.establish-dues-main').animate({'margin-top':'0px'},500);
+    }
 
+    function _hide_establish_dues() {
+        $('.establish-dues').animate({'top':'-1000%'},1000);
+        $('.establish-dues-main').animate({'margin-top':'-250px'},600);
+    }
+</script>
     </body>
 </html>

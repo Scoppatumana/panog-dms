@@ -886,7 +886,6 @@ header .header-div-inner h1 span {
   transition: 0.5s;
 }
 
-
   /* ESTABLISH DUES JAVASCRIPT */
 .establish-dues{
     width: 100%;
@@ -894,31 +893,31 @@ header .header-div-inner h1 span {
     background: rgba(7,7,7,0.8);
     z-index: 1000;
     position: fixed;
-    right: -1000%;
+    top: -1000%;
 }
 
 .establish-dues .establish-dues-main{
     width: 450px;
-    height: 100%;
+    height: 250px;
+    margin: auto;
     background: rgba(225, 225, 225, 1.5);
     text-align: center;
-    float: right;
-    margin-right: -250px;
+    margin-top: -250px;
 }
 
 .establish-dues .establish-dues-main .establish-dues-header{
   width: 100%;
-  height: 80px;
+  height: 50px;
   background: #e2961c;
   text-align: left;
-  line-height: 80px;
+  line-height: 50px;
   color: #fff;
 }
 
 .establish-dues .establish-dues-main .establish-dues-header h1{
   padding: 0px;
   margin: 0px;
-  font-size: 30px;
+  font-size: 20px;
   margin-left: 10px;
 }
 
@@ -940,12 +939,6 @@ border: 0.5px rgba(153, 153, 102, 0.7) solid;
 font-size: 19px;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   
-}
-
-.establish-dues .establish-dues-main textarea{
-  margin:0px auto 10px auto;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 15px;
 }
 
 .establish-dues .establish-dues-main .buttons-div{
@@ -987,63 +980,121 @@ background: rgba(43, 211, 1, 0.829);
 
 
         /* NOTIFICATION STYLE */
-.notification-main {
-  width: 65%;
-  min-height: 300px;
-  margin: 50px auto;
-}
-
-.notification-main .notification-proper{
-  width: 100%;
-  height: calc(100px - 20px);
-  background: #cccc;
-  margin: 10px 0px 0px 0px;
-  padding-top: 15px;
-  cursor: pointer;
-  margin-bottom: 4px;
-  border-radius: 10px;
-}
-
-.notification-main .notification-proper .passport{
-  width: 70px;
-  height: 70px;
- 
-  margin-left: 20px;
-  border-radius: 100%;
-  margin-right: 20px;
-  float: left;
-}
-
-.notification-main .notification-proper .passport img{
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-}
-
-.notification-main .notification-proper .notification-text{
-  height: auto;
-  width: 82%;
-  overflow: hidden;
-}
-
-.notification-main .notification-proper .notification-text h4{
-  padding: 0px;
-  margin: 0px;
-  font-size: 18px;
-  overflow: hidden;
-  min-width: 10px;
-  height:20px;
-}
-
-.notification-main .notification-proper .notification-text p{
-  padding: 0px;
-  margin: 0px;
-  margin-top: 5px;
-  overflow: hidden;
-  min-width: 10px;
-  height:20px;
-  float: left;
-}
+        .notification-overall{
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, .3);
+          position: fixed;
+          z-index: 2000;
+          bottom: -1000%;
+        }
+        
+        .notification-main{
+          width: 70%;
+          height: 550px;
+          background: #fff;
+          margin-top: 92.5px;
+          z-index: 2000;
+          margin-left: 23%;
+          margin-bottom: -250px;
+          border-radius: 10px 10px 0px 0px;
+        }
+        
+        .notification-overall .notification-main .notification-header{
+          height: 50px;
+          width: 100%;
+          background: #23f523;
+          border-radius: 10px 10px 0px 0px;
+          color: #fff;
+          line-height: 50px;
+          font-size: 19px;
+          font-weight: bold;
+        }
+        
+        .notification-overall .notification-main .notification-header i{
+          color: #fff;
+          margin-left: 20px;
+        }
+        
+        .notification-overall .notification-main .notification-body{
+          width: 95%;
+          margin: auto;
+          overflow: auto;
+          height: auto;
+          margin-top: 30px;
+          text-align: center;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper{
+          width: 48%;
+          padding: 2px 2px 2px 2px;
+          height: 110px;
+          box-shadow: 10px 10px 10px 10px rgba(243, 243, 243, 1);
+          background: #fff;
+          border-radius: 4px;
+          vertical-align: top;
+          display: inline-block;
+          margin-bottom: 15px;
+          text-align: left;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper img{
+          width: 100%;
+          height: 100%;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper .picture-div{
+          width: 20%;
+          height: 100%;
+         vertical-align: top;
+         display: inline-block;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper .notification-text{
+          width: 60%;
+          height: calc(100% - 5px);
+          vertical-align: top;
+         display: inline-block;
+          padding: 5px 0px 0px 4px;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper .notification-text h6{
+          padding: 0px 0px 0px 0px;
+          margin: 0px 0px 0px 0px;
+          text-align: left;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper .notification-text .heading{
+          padding: 0px;
+          margin: 4px 0px 0px 0px;
+          font-size: 14px;
+          font-weight: bold;
+          overflow: hidden;
+          height: 13px;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper .notification-text .message{
+        
+          margin: 7px 0px 0px 0px;
+         
+          height:50px;
+        }
+        
+        .notification-overall .notification-main .notification-body .notification-proper button{
+          height: 35px;
+          width: 15%;
+          margin-top: 37.5px;
+          border: 0px;
+          float: right;
+          margin-left: 10px;
+          border-radius: 4px;
+          font-weight: bold;
+          background: #23f523;
+          color: #fff;
+          cursor: pointer;
+        }
 
 .paymentform-main{
   width: 40%;
@@ -1087,4 +1138,53 @@ background: rgba(43, 211, 1, 0.829);
   transition: 0.5s;
   color: rgb(1, 145, 1);
   background: rgba(114, 121, 129, 0.6);
+}
+
+/*MENU BAR STYLE */
+.menu-bar-overall-div{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  position: fixed;
+  z-index: 500;
+
+  display: block;
+  margin-left: -1000%;
+}
+
+.menu-bar-overall-div .side-menu-bar{
+  width: 250px;
+  margin-left: -250px;
+  height: 100%;
+  background: #fff;   
+  z-index: 200;
+}
+
+.menu-bar-overall-div .side-menu-bar .side-bar-ul{
+  padding: 0px;
+  display: block;
+  margin: 0px;
+
+}
+
+.menu-bar-overall-div .side-menu-bar .side-bar-ul .side-bar-li{
+  list-style: none;
+  width: calc(100% - 20px);
+  line-height: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 0px 5px 20px;
+  color: #343148;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.menu-bar-overall-div .side-menu-bar .side-bar-ul .side-bar-li:hover{
+  background: #343148;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.menu-bar-overall-div .side-menu-bar .side-bar-ul a{
+  text-decoration: none;
 }

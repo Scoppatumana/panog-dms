@@ -166,15 +166,7 @@ counters.forEach(counter => {
 
 
 
-    function _show_establish_dues() {
-        $('.establish-dues').animate({'right':'0%'},100);
-        $('.establish-dues-main').animate({'margin-right':'0px'},500);
-    }
-
-    function _hide_establish_dues() {
-        $('.establish-dues').animate({'right':'-1000%'},1000);
-        $('.establish-dues-main').animate({'margin-right':'-250px'},600);
-    }
+   
 
     function _show_dues_confirmation() {
         $('.dues_confirmation').animate({'right':'0%'},100);

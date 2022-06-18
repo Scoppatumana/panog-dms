@@ -71,7 +71,6 @@ header .header-div-inner .notification{
   margin-left: 20px;
   padding: 5px 10px 0px 10px;
   border-radius: 4px;
-  background: rgba(114, 121, 129, 0.6);
 }
 
 header .header-div-inner .notification:hover{
@@ -866,7 +865,7 @@ header .header-div-inner h1 span {
   margin-bottom: 10px;
 }
 
-.annual-dues-main-div button:hover{
+.main-div button:hover{
   transition: 0.5s;
   color: #fff;
   background: rgba(114, 121, 129, 0.6);
@@ -949,119 +948,28 @@ header .header-div-inner h1 span {
 }
 
 
-  /* ESTABLISH DUES JAVASCRIPT */
-.establish-dues{
-    width: 100%;
-    height: 100%;
-    background: rgba(7,7,7,0.8);
-    z-index: 1000;
-    position: fixed;
-    right: -1000%;
-}
-
-.establish-dues .establish-dues-main{
-    width: 450px;
-    height: 100%;
-    background: rgba(225, 225, 225, 1.5);
-    text-align: center;
-    float: right;
-    margin-right: -250px;
-}
-
-.establish-dues .establish-dues-main .establish-dues-header{
-  width: 100%;
-  height: 80px;
-  background: #e2961c;
-  text-align: left;
-  line-height: 80px;
-  color: #fff;
-}
-
-.establish-dues .establish-dues-main .establish-dues-header h1{
-  padding: 0px;
-  margin: 0px;
-  font-size: 30px;
-  margin-left: 10px;
-}
-
-.establish-dues .establish-dues-main label{
-  float: left;
-  font-size: 17px;
-  margin: 20px 0px 8px 30px;
-  font-weight: bold;
-}
-
-.establish-dues .establish-dues-main input{
-width: 90%;
-min-height: 60px;
-text-align: left;
-padding: 15px 0px 10px 15px;
-color: #333366;
-border-radius: 10px;
-border: 0.5px rgba(153, 153, 102, 0.7) solid;
-font-size: 19px;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  
-}
-
-.establish-dues .establish-dues-main textarea{
-  margin:0px auto 10px auto;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 15px;
-}
-
-.establish-dues .establish-dues-main .buttons-div{
-  width: 90%;
-  margin: 20px auto;
-}
-
-.establish-dues .establish-dues-main .buttons-div button{
-  height: 50px;
-  width: 47%;
-  vertical-align: top;
-  display: inline-block;
-  border: 0px;
-  border-radius: 7px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 17px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.establish-dues .establish-dues-main .buttons-div .close{
-  background: red;
-}
-
-.establish-dues .establish-dues-main .buttons-div .close:hover{
-  background: rgba(7, 7, 7, 0.5);
-  transition: 0.5s;
-}
-
-.establish-dues .establish-dues-main .buttons-div .establish{
-background: rgba(43, 211, 1, 0.829);
-}
-
-.establish-dues .establish-dues-main .buttons-div .establish:hover{
-  background: rgba(7, 7, 7, 0.5);
-  transition: 0.5s;
-}
-
-
-
-
-
 .paymentform-main{
   width: 40%;
-  height: calc(300px - 20px);
-  margin: 50px auto;
+  height: calc(370px - 20px);
+  margin: 40px auto;
   text-align: center;
   padding: 20px;
   border: none;
   box-shadow: 3px 3px 3px 3px #ccc;
 }
 
+.paymentform-main label{
+  float: left;
+  margin-left:50px;
+  margin-bottom: 6px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: green;
+}
+
 .paymentform-main input{
-  height: 51px;
+  height: 45px;
   width: 80%;
   border-radius: 10px;
   border: 1px solid rgb(1, 145, 1);
@@ -1296,6 +1204,9 @@ background: rgba(43, 211, 1, 0.829);
   }
 }
 
+
+/*START OF NOTIFICATION-STYLE */
+
 .notification-overall{
   width: 100%;
   height: 100%;
@@ -1303,6 +1214,7 @@ background: rgba(43, 211, 1, 0.829);
   position: fixed;
   z-index: 2000;
   bottom: -1000%;
+  display: block;
 }
 
 .notification-main{
@@ -1332,11 +1244,31 @@ background: rgba(43, 211, 1, 0.829);
   margin-left: 20px;
 }
 
+.notification-overall .notification-main .notification-header .close-window{
+  height: 30px;
+  line-height: 30px;
+  width:30px;
+  float: right;
+  background: #fff;
+  color: red;
+  cursor: pointer;
+  margin-right: 30px;
+  text-align: center;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+.notification-overall .notification-main .notification-header .close-window:hover{
+  background: red;
+  color: #fff;
+  transition: 0.5s;
+}
+
 .notification-overall .notification-main .notification-body{
   width: 95%;
   margin: auto;
   overflow: auto;
-  height: auto;
+  height:450px;
   margin-top: 30px;
   text-align: center;
 }
@@ -1345,7 +1277,7 @@ background: rgba(43, 211, 1, 0.829);
   width: 48%;
   padding: 2px 2px 2px 2px;
   height: 110px;
-  box-shadow: 10px 10px 10px 10px rgba(243, 243, 243, 1);
+  box-shadow: 0px 2px 5px 1px rgba(243, 243, 243, 1);
   background: #fff;
   border-radius: 4px;
   vertical-align: top;
@@ -1382,15 +1314,6 @@ background: rgba(43, 211, 1, 0.829);
   font-weight: bold;
 }
 
-.notification-overall .notification-main .notification-body .notification-proper .notification-text .heading{
-  padding: 0px;
-  margin: 4px 0px 0px 0px;
-  font-size: 14px;
-  font-weight: bold;
-  overflow: hidden;
-  height: 13px;
-}
-
 .notification-overall .notification-main .notification-body .notification-proper .notification-text .message{
 
   margin: 7px 0px 0px 0px;
@@ -1411,6 +1334,15 @@ background: rgba(43, 211, 1, 0.829);
   color: #fff;
   cursor: pointer;
 }
+
+.notification-overall .notification-main .notification-body .notification-proper button:hover{
+  background: rgba(114, 121, 129, 0.6);
+  transition: 0.5s;
+}
+
+/* END OF NOTIFICATION STYLE */
+
+
 
 @media all and (max-width:900px){
   .dashboard-main-div .right-sided-div .bookings-overall{

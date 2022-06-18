@@ -11,13 +11,11 @@
 
     <?php
 
-            $checkannualduequery = mysqli_query($conn, "SELECT * FROM `annual_due_tab`");
-            $checkannualdue = mysqli_num_rows($checkannualduequery);
-
+           
             $checkpaymentquery = mysqli_query($conn, "SELECT * FROM `payment_verification_tab`");
             $checkpayment = mysqli_num_rows($checkpaymentquery);
 
-            $notification=  $checkannualdue + $checkpayment ;
+            $notification= $checkpayment ;
 
             if ($notification > 50) {
               $notification = "50+";
@@ -64,52 +62,21 @@
         </div>
 </div>
 
+
 <div class="notification-overall">
     <div class="notification-main">
       <div class="notification-header">
           <i class="fa fa-bell fa-lg"></i> Notification
+            <div class="close-window" onClick="_close_notification();">
+              X
+            </div>
+
       </div>
 
       <div class="notification-body">
 
 
-              <?php
-                    $selectmember_query = mysqli_query($conn, "SELECT * FROM `annual_due_tab`") or die('cannot select from database');
-                    while ($selectmember_fetch = mysqli_fetch_array($selectmember_query)) {
-
-                        $select_memberid= $selectmember_fetch['member_id'];
-                        $select_due_heading= $selectmember_fetch['annual_due_heading'];
-                        $select_due_comment= $selectmember_fetch['annual_due_comment'];
-
-
-
-                        $findmember_query = mysqli_query($conn, "SELECT * FROM `members_tab` WHERE member_id = '$select_memberid' ") or die('cannot select from database');
-                        $findmember_fetch = mysqli_fetch_array($findmember_query);
-        
-                        $find_firstname= $findmember_fetch['firstname'];
-                        $find_title= $findmember_fetch['title'];
-                        $find_lastname= $findmember_fetch['lastname'];
-                        $find_middlename= $findmember_fetch['middlename'];
-
-    
-                ?>
-            <div class="notification-proper">
-
-              <div class="picture-div">
-                  <img src="images/863.jpg" alt="">
-              </div>
-              
-              <div class="notification-text">
-                <h6> <?php echo $find_title ?> <?php echo $find_lastname ?> <?php echo $find_firstname ?></h6>
-                <p class="heading"><?php echo $select_due_heading ?></p>
-                <p class="heading message"><?php echo $select_due_comment ?></p>
-              </div>
-
-              <button><i class="fa fa-eye"></i> VIEW</button>
-
-            </div>
-
-            <?php } ?>
+             
 
             <?php
 
@@ -141,11 +108,10 @@
               
               <div class="notification-text">
                 <h6><?php echo $find_title ?> <?php echo $find_lastname ?> <?php echo $find_firstname ?></h6>
-                <p class="heading"><?php echo $select_payment_purpose ?></p>
-                <p class="heading message"><?php echo $select_payment_details ?></p>
+                <p class="heading message">I have paid an amount of #500000000 to the association as my annual due for the year 2000</p>
               </div>
 
-              <button><i class="fa fa-check"></i> CHECK</button>
+              <button onClick="_open_confirmation();"><i class="fa fa-eye"></i> VIEW</button>
 
             </div>
 
@@ -155,9 +121,21 @@
     </div>
 </div>
 
+
+
+
+
+
 <script>
   function _open_notification() {
-        $('.notification-overall').animate({'bottom':'0%'},300);
-        $('.notification-main').animate({'margin-bottom':'0px'},600);
+        $('.notification-overall').animate({'bottom':'0%'},200);
+        $('.notification-main').animate({'margin-bottom':'0px'},400);
+}
+
+function _close_notification() {
+        $('.notification-overall').animate({'bottom':'-1000%'},400);
+        $('.notification-main').animate({'margin-bottom':'-250px'},200);
     }
+
 </script>
+
